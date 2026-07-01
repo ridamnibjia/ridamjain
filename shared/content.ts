@@ -37,6 +37,8 @@ export interface Project {
   description: string;
   tech: string[];
   links: ProjectLink[];
+  image?: string;
+  logo?: string;
 }
 
 export interface SkillGroup {
@@ -108,23 +110,23 @@ export const projects: Project[] = [
     description:
       "You call, it picks up, talks you through booking a spa appointment, and hangs up like a person would. It runs on LiveKit with Deepgram for speech-to-text, Google Gemini for the conversation, and Deepgram Aura for the voice. The booking logic is pure and unit-tested, so it will not double-book a slot or make one up. It is live and you can call it in the browser.",
     tech: ["TypeScript", "LiveKit", "Deepgram", "Gemini", "Express", "React", "Zod"],
-    links: [
-      { label: "Live", href: "https://lotusvoice.ridamjain.com/" },
-      { label: "Code", href: "https://github.com/ridamnibjia/lotus-voice" },
-    ],
+    links: [{ label: "Live", href: "https://lotusvoice.ridamjain.com/" }],
+    image: "/lotus-live.png",
   },
   {
     name: "Just Lecture",
     tagline: "A distraction-free study app for focusing on lectures.",
     description:
-      "A study app built around curated lecture playlists with no endless feed to pull you away, so you actually focus. It is published and live on the Google Play Store.",
-    tech: ["Android"],
+      "A distraction-free learning app. It curates short YouTube lectures into clean, ad-free playlists, with no recommended videos or algorithm pulling students off track. Browse by search and category, sign in, and focus. The app is native Android written in Java, backed by a TypeScript API with PostgreSQL and Prisma that serves the playlists and handles auth. Published and live on the Google Play Store, with more features on the way.",
+    tech: ["Android", "Java", "TypeScript", "PostgreSQL", "Prisma"],
     links: [
       {
         label: "Play Store",
         href: "https://play.google.com/store/apps/details?id=com.ridamnibjia.studious",
       },
     ],
+    image: "/just-lecture-hero.png",
+    logo: "/just-lecture-icon.png",
   },
 ];
 

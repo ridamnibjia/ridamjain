@@ -16,9 +16,22 @@ export function Projects() {
     <Section id="projects" path="/api/projects" title="Projects" meta={meta}>
       <div className="grid gap-4 md:grid-cols-2">
         {data.projects.map((p) => (
-          <Card key={p.name} className="flex flex-col">
+          <Card key={p.name} className="flex flex-col overflow-hidden">
+            {p.image && (
+              <img
+                src={p.image}
+                alt={`${p.name} screenshot`}
+                loading="lazy"
+                className="aspect-video w-full border-b border-line object-cover object-top"
+              />
+            )}
             <CardBody className="flex h-full flex-col">
-              <h3 className="font-mono text-lg text-text">{p.name}</h3>
+              <div className="flex items-center gap-2.5">
+                {p.logo && (
+                  <img src={p.logo} alt="" className="size-7 rounded-md" />
+                )}
+                <h3 className="font-mono text-lg text-text">{p.name}</h3>
+              </div>
               <p className="mt-1 text-sm text-signal">{p.tagline}</p>
               <p className="mt-4 flex-1 leading-relaxed text-soft">{p.description}</p>
 
