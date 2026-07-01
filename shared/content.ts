@@ -151,7 +151,7 @@ export const skills: SkillGroup[] = [
     label: "Cloud and DevOps",
     items: ["AWS", "Docker", "Cloudflare", "Render", "Neon", "Firebase", "Git", "Linux"],
   },
-  { label: "Frontend", items: ["React", "React Native", "TailwindCSS"] },
+  { label: "Frontend", items: ["React", "TailwindCSS"] },
   { label: "Payments", items: ["Razorpay", "Cashfree", "Viva Payments"] },
 ];
 
