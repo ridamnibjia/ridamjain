@@ -3,6 +3,10 @@
   "name": "ridamjain-portfolio",
   "main": "worker/index.ts",
   "compatibility_date": "2025-05-01",
+  // Bind the custom domain in code so it can't drift from the dashboard.
+  "routes": [{ "pattern": "ridamjain.com", "custom_domain": true }],
+  // Adding routes disables the workers.dev URL by default; keep it as a fallback.
+  "workers_dev": true,
   // tsconfig path aliases don't reach wrangler's esbuild bundler; declare it here too.
   "alias": { "@shared/content": "./shared/content.ts" },
   "assets": {
