@@ -1,0 +1,18 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "ridamjain-portfolio",
+  "main": "worker/index.ts",
+  "compatibility_date": "2025-05-01",
+  // tsconfig path aliases don't reach wrangler's esbuild bundler; declare it here too.
+  "alias": { "@shared/content": "./shared/content.ts" },
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    // Non-/api paths that don't match a file fall back to index.html (SPA).
+    "not_found_handling": "single-page-application",
+    // Force the Worker to handle the API before static-asset routing kicks in.
+    // Both the bare index (/api) and sub-paths (/api/*) must route to the Worker.
+    "run_worker_first": ["/api", "/api/*"]
+  },
+  "observability": { "enabled": true }
+}

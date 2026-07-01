@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+/* Design tokens — see the spec's frontend-design section.
+   Monochrome near-black + one emerald "signal" accent (the 200 OK / cache HIT
+   color). Amber/red appear only inside status badges. */
+@theme {
+  --color-ink: #0b0c0e;
+  --color-surface: #131519;
+  --color-raised: #181b21;
+  --color-line: #23262d;
+  --color-mute: #8a9099;
+  --color-soft: #b4b9c1;
+  --color-text: #e8eaed;
+  --color-signal: #3dd68c;
+  --color-signal-dim: #1f5f43;
+  --color-warn: #e8b44a;
+  --color-err: #f2685c;
+
+  --font-sans: "Geist", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", "Cascadia Code", monospace;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-ink);
+    color: var(--color-text);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background-color: color-mix(in oklab, var(--color-signal) 30%, transparent);
+    color: #fff;
+  }
+
+  /* Emerald focus ring, always visible for keyboard users. */
+  :where(a, button, [tabindex]):focus-visible {
+    outline: 2px solid var(--color-signal);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
+}
+
+/* Subtle grain-free ambient glow behind the hero, kept quiet. */
+.ambient {
+  background:
+    radial-gradient(60rem 40rem at 15% -10%, color-mix(in oklab, var(--color-signal) 8%, transparent), transparent 60%),
+    radial-gradient(50rem 30rem at 90% 0%, color-mix(in oklab, #4a6cff 6%, transparent), transparent 55%);
+}
+
+/* Blinking cursor for the terminal/console bits. */
+@keyframes blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+.cursor::after {
+  content: "▊";
+  margin-left: 2px;
+  color: var(--color-signal);
+  animation: blink 1.1s steps(1) infinite;
+}
+
+/* Fade-up on scroll reveal (opt-in via .reveal + .is-in).
+   Only hidden when JS is present (.js), so content is never trapped behind JS. */
+.js .reveal {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.js .reveal.is-in {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .js .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}

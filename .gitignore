@@ -1,0 +1,23 @@
+node_modules
+dist
+.wrangler
+.dev.vars
+*.log
+.DS_Store
+node_modules/.tmp
+
+# Local screenshots / browser automation artifacts
+*.png
+.playwright-mcp/
+
+# Tooling / session scratch — not part of the site
+.agents/
+.remember/
+skills-lock.json
+
+# Private working docs — must NOT be published (aspirational drafts, internal spec)
+Ridam_FDE_Game_Plan.md
+Ridam_Jain_FDE_Resume.md
+Ridam_Jain_FDE_Resume.pdf
+Ridam_Jain_Backend_Engineer_Resume*.pdf
+docs/
