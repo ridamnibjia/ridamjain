@@ -51,7 +51,6 @@ export interface Contact {
   linkedin: string;
   x: string;
   github: string;
-  resume: string;
 }
 
 export const profile: Profile = {
@@ -151,6 +150,7 @@ export const skills: SkillGroup[] = [
     label: "Cloud and DevOps",
     items: ["AWS", "Docker", "Cloudflare", "Render", "Neon", "Firebase", "Git", "Linux"],
   },
+  { label: "Observability", items: ["Elasticsearch", "Logstash", "Kibana"] },
   { label: "Frontend", items: ["React", "TailwindCSS"] },
   { label: "Payments", items: ["Razorpay", "Cashfree", "Viva Payments"] },
 ];
@@ -168,5 +168,4 @@ export const contact: Contact = {
   linkedin: "https://linkedin.com/in/ridam-jain-backend",
   x: "https://x.com/rhythmnibjia",
   github: "https://github.com/ridamnibjia",
-  resume: "/Ridam_Jain_Backend_Engineer_Resume.pdf",
 };

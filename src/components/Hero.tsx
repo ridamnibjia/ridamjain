@@ -1,7 +1,7 @@
 import { useEndpoint } from "@/lib/api";
 import { ResponseMeta } from "./ResponseMeta";
 import { Button } from "./ui/button";
-import { profile, contact } from "@shared/content";
+import { profile } from "@shared/content";
 import type { Profile } from "@shared/content";
 
 export function Hero() {
@@ -36,11 +36,9 @@ export function Hero() {
           <Button variant="solid" size="lg" onClick={() => scrollTo("api")}>
             Try the API
           </Button>
-          <a href={contact.resume} download>
-            <Button variant="outline" size="lg">
-              Download résumé
-            </Button>
-          </a>
+          <Button variant="outline" size="lg" onClick={() => scrollTo("contact")}>
+            Get in touch
+          </Button>
         </div>
       </div>
     </section>

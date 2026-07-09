@@ -26,13 +26,6 @@ export function Footer() {
             <IconLink href={contact.github} label="GitHub">
               <GithubIcon />
             </IconLink>
-            <a
-              href={contact.resume}
-              download
-              className="ml-1 inline-flex items-center gap-2 rounded-md border border-line px-3 py-2 font-mono text-xs text-soft transition-colors hover:border-signal hover:text-signal"
-            >
-              résumé <DownloadIcon />
-            </a>
           </div>
         </div>
 
@@ -82,13 +75,6 @@ function XIcon() {
   return (
     <svg {...svg}>
       <path d="M18.24 2.25h3.31l-7.23 8.26 8.5 11.24h-6.66l-5.22-6.82-5.97 6.82H1.66l7.73-8.84L1.24 2.25h6.83l4.71 6.23 5.46-6.23Zm-1.16 17.52h1.83L7.01 4.13H5.05l12.03 15.64Z" />
-    </svg>
-  );
-}
-function DownloadIcon() {
-  return (
-    <svg width={14} height={14} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} aria-hidden>
-      <path d="M12 3v12m0 0 4-4m-4 4-4-4M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2" />
     </svg>
   );
 }

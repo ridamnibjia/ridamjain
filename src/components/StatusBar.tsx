@@ -1,5 +1,4 @@
 import { useEndpoint } from "@/lib/api";
-import { contact } from "@shared/content";
 
 const NAV = [
   ["experience", "#experience"],
@@ -30,13 +29,6 @@ export function StatusBar() {
               {label}
             </a>
           ))}
-          <a
-            href={contact.resume}
-            download
-            className="rounded-md border border-line px-2.5 py-1 text-soft transition-colors hover:border-signal hover:text-signal"
-          >
-            résumé ↓
-          </a>
         </nav>
 
         <a
