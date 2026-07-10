@@ -8,6 +8,8 @@ node_modules/.tmp
 
 # Local screenshots / browser automation artifacts
 *.png
+# ...but public/ is the shipped asset dir, those PNGs must be tracked
+!public/*.png
 .playwright-mcp/
 
 # Tooling / session scratch — not part of the site

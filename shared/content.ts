@@ -57,7 +57,7 @@ export const profile: Profile = {
   name: "Ridam Jain",
   title: "Backend Engineer",
   tagline: "I build APIs, payment systems, and the parts that have to keep working.",
-  location: "Jodhpur, India",
+  location: "Pali, India",
   yearsExperience: "3.5+ years",
   summary:
     "I have spent three and a half years building backends that people use every day. I ran payments for a restaurant network in Ireland and built a visa platform from scratch. I like clean systems and I own what I ship.",
@@ -127,10 +127,25 @@ export const projects: Project[] = [
     image: "/just-lecture-hero.png",
     logo: "/just-lecture-icon.png",
   },
+  {
+    name: "Aashirwad",
+    tagline: "A gold and silver jewellery estimate app, built for the shop counter.",
+    description:
+      "A jeweller adds an ornament, sets purity and weight, and gets a clean estimate to hand the customer. It does the arithmetic that used to live in a notebook: metal value at the rate per gram, wastage, making charges, stones, and tax. It also deducts old jewellery being exchanged and any advance already paid, then shows a grand total with the full breakdown. Estimates export as a PDF or an image and go out over WhatsApp in one tap. Native Android in Java, with Room storing estimates and customers on the device. Free, and live on the Google Play Store.",
+    tech: ["Android", "Java", "Room", "SQLite", "Firebase Auth", "AdMob"],
+    links: [
+      {
+        label: "Play Store",
+        href: "https://play.google.com/store/apps/details?id=com.ridamnibjia.aashirwad",
+      },
+    ],
+    image: "/aashirwad-hero.png",
+    logo: "/aashirwad-icon.png",
+  },
 ];
 
 export const skills: SkillGroup[] = [
-  { label: "Languages", items: ["Java", "JavaScript", "TypeScript", "Node.js", "SQL"] },
+  { label: "Languages", items: ["Java", "JavaScript", "TypeScript", "Node.js", "SQL", "Android Java"] },
   {
     label: "Backend",
     items: [
